@@ -7,18 +7,22 @@ classifies tweets about nba players as positive or negative to see the public pe
 
 ## Things you need to install:
 
-### Pandas/Anaconda
-Link: http://docs.continuum.io/anaconda/install/
+### PIP
+- Link: https://pip.pypa.io/en/stable/installing/
+
+
+### Pandas/Anaconda + other basic packages (Scipy, Numpy)
+- Link: http://docs.continuum.io/anaconda/install/
 
 ### NLTK
-Link: https://www.nltk.org/install.html
-Command: sudo pip install -U nltk
+- Link: https://www.nltk.org/install.html
+- Command: sudo pip install -U nltk
 
 ### NLTK data
-Link: https://www.nltk.org/data.html
-Command: sudo python -m nltk.downloader -d /usr/local/share/nltk_data all
+- Link: https://www.nltk.org/data.html
+- Command: sudo python -m nltk.downloader -d /usr/local/share/nltk_data all
 
 ### Twython
-Link: https://stackabuse.com/accessing-the-twitter-api-with-python/
-Command: sudo pip install twython
+- Link: https://stackabuse.com/accessing-the-twitter-api-with-python/
+- Command: sudo pip install twython
 
