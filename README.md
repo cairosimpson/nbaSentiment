@@ -3,7 +3,7 @@ classifies tweets about nba players as positive or negative to see the public pe
 
 ## Credentials you need:
 1. Create a Twitter Account
-2. Get a credentials.json file and put it in the top folder; this is accessed in TwitterScraper.py
+2. Fill out the credentials.json file w/ your information; this is accessed in TwitterScraper.py
 
 ## Things you need to install:
 
