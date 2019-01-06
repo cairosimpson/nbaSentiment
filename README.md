@@ -21,6 +21,7 @@ classifies tweets about nba players as positive or negative to see the public pe
 ### NLTK data
 - Link: https://www.nltk.org/data.html
 - Command: sudo python -m nltk.downloader -d /usr/local/share/nltk_data all
+- Sentiment analyzer package to compare: http://www.nltk.org/howto/sentiment.html 
 
 ### Twython
 - Link: https://stackabuse.com/accessing-the-twitter-api-with-python/

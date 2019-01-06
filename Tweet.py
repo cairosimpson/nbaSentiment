@@ -5,11 +5,16 @@ import sys
 # Our class that holds all the information in a Tweet.
 class Tweet:
 
+	# Info about the Tweet
 	tweet_id = None
 	text = ""
 	created_at = ""
 	hashtags = list()
 	user_mentions = list()
+	retweet_count = None
+	favorite_count = None
+
+	# Info about the user who Tweeted it
 	user_id = None
 	user_name = ""
 	user_description = ""
@@ -18,21 +23,44 @@ class Tweet:
 	user_favorites_count = None
 	status_count = None
 	verified = False
-	retweet_count = None
-	favorite_count = None
 
-	# Setting all the default fields of a Tweet
+
+	# Filling hte information of a Tweet
 	def __init__(self, data):
-		print("A") # TODO
+		try:
+			tweet_id = data['id']
+			text = data['text']
+			created_at = data['created_at']
+			hashtags = data['entities']['hashtags']
+			user_mentions = data['entities']['user_mentions']
+			user_id = data['user']['id']
+			user_name = data['user']['name']
+			user_description = data['user']['description']
+			user_followers_count = data['user']['followers_count']
+			user_created_at = data['user']['created_at']
+			user_favorites_count = data['user']['favourites_count']
+			status_count = data['user']['statuses_count']
+			verified = data['user']['verified']
+			reteweet_count = data['user']['retweet_count']
+			favorite_count = data['user']['favorite_count']
+		except Exception as e:
+			print("Passing incomplete data to create a Tweet. Error:")
+			print(e)
 
 	# Governs how the Tweet gets converted to a String (for debugging and readibility). "__dict__" is a method that every class has by default
 	# which returns a dictionary of all instance variables of the class. We just convert this to a string and return it.
 	def __str__(self):
 		return str(self.__dict__)
 
+	# Returns whether a tweet is the same as another tweet (that the tweet's ids are the same)
+	def __eq__(self, other):
+		return self.tweet_id = other.tweet_id
 
+	# Defines how to hash a Tweet (using the id) so that it can be used in hashmaps and sets (which are hashsets)
+	def __hash__(self):
+        return hash(self.tweet_id)
 """
-Exmaple Tweet:
+Exmaple Tweet that is returned by Twitter:
 {
     "created_at": "Sun Feb 25 18:11:01 +0000 2018",
     "id": 967824267948773377,
