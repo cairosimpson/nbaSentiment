@@ -41,13 +41,13 @@ class DataSet:
 
 # ================================================================================================================
 # All public methods that will be accessed upon import of this file outside of the Dataset class
-# You can call these with "import Dataset; example = Datset.stem(text)"
+# You can call these with "import Dataset; stemmed_text = Datset.stem(text)"
 # ================================================================================================================
 
 # Initializes a stemmer; this takes a second or two
 _stemmer = SnowballStemmer("english")
 
-# Stems a string
+# Returns a stemmed version of a string
 def stem(text, ignore_stopwords=True):
 	return _stemmer.stem(tweet, ignore_stopwords=ignore_stopwords)
 
